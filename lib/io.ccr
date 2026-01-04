@@ -1,0 +1,52 @@
+///
+/// standard doccr-lang library
+/// | file: "io.ccr"
+/// | written by: emexsw. 2025
+///
+
+@import std.("types.ccr")
+// header
+@head:
+    define module = "std.io";
+
+    // type-definitions:
+    typedef number int;
+    typedef message string;
+
+    // colors
+    define color
+    //               format:  A R G B
+    pub var: white   = color(0xFFFFFFFF);
+    pub var: black   = color(0xFF000000);
+    pub var: red     = color(0xFFFF0000);
+    pub var: green   = color(0xFF00FF00);
+    pub var: blue    = color(0xFF0000FF);
+    pub var: yellow  = color(0xFFFFFF00);
+    pub var: cyan    = color(0xFF00FFFF);
+    pub var: magenta = color(0xFFFF00FF);
+    pub var: gray    = color(0xFF808080);
+    pub var: transparent = color(0x00000000);
+
+    // streams
+    struct stream {
+        id: number;
+    }
+
+    pub var: stdout = stream {id = 1};
+    pub var: stderr = stream {id = 2};
+
+    //pub io
+    export fn.printf(message, color);
+    export fn.print(message,color, x, y);
+
+    //export fn.putc(char);
+    //export fn.getc();
+
+@end;
+
+//implements
+
+fn print(message) {
+    //extern c
+    printf(fmt, ...);
+}

@@ -1,0 +1,16 @@
+@import std.("io.ccr");
+
+@head
+    define main = fn.main:
+@end
+
+fn main() {
+    pub var: number = 1;
+    pub var: message = "hello\n";
+
+    printf(message, white);
+
+    if number == 1 {
+        printf(number, green);
+    }
+}
