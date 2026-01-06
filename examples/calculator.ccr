@@ -1,0 +1,47 @@
+@import std::io
+
+// fn fn_name(var: type, var: type...     ): gives back what?:
+fn caclulate(a: number, b:number, op: char): number {
+  if op == '+' {
+    return a + b;
+  }
+  if op == '-' {
+    return a - b;
+  }
+  if op == '*' {
+    return a * b;
+  }
+  if op == '/' {
+    if b == '0' {
+      printf("you cannot divide 0!\n", white);
+      return 0;
+    }// or just 0 
+    return a / b;
+  }
+
+  return 0;
+}
+
+pub fn main(): int {
+  var again: char = 'y';
+
+  while again == 'y' {
+    printf("first number: ", white);
+    var a: number = atoi(gets()); // both from c for now 
+
+    printf("\noperator: ", white);
+    var op: char = getc();
+
+    printf("\nsecond number: ", white);
+    var b: number = atoi(gets()); // both from c for now 
+
+    var result: number = fn.calculate(a,b,op);
+    printf("\nyour result is: ", white);
+    printf(result, green);
+
+    printf("\n again? (y/N) ", white);
+    again = getc();
+  }
+
+  //return 0; // not neccessary
+}
